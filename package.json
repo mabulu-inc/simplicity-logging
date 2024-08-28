@@ -1,20 +1,21 @@
 {
   "type": "module",
-  "name": "@mabulu/logging",
+  "name": "@mabulu-inc/logging",
   "version": "1.0.5",
   "description": "",
   "main": "index.mjs",
   "scripts": {
     "lint": "eslint .",
-    "co:login": "aws codeartifact login --tool npm --repository mabulu --domain mabulu --domain-owner 059087497480 --region us-east-2 --profile es-dev",
-    "sso:login": "aws sso login --profile es-dev",
+    "release": "npm run lint && standard-version && git push --follow-tags && npm publish",
     "test": "node --test"
   },
   "author": "",
+  "repository": "git@github.com:mabulu-inc/logging.git",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.2.0",
     "eslint": "^9.2.0",
-    "globals": "^15.1.0"
+    "globals": "^15.1.0",
+    "standard-version": "^9.5.0"
   }
 }

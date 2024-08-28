@@ -10,7 +10,10 @@
     "test": "node --test"
   },
   "author": "",
-  "repository": "git@github.com:mabulu-inc/logging.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mabulu-inc/logging.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.2.0",

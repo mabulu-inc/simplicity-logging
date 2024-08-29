@@ -1,8 +1,8 @@
 # logging
 
-This library wraps the logging methods of the console object to provide basic LOG_LEVEL functionality. We use CodeArtifact as a private npm registry for the @mabulu namespace.
+This library wraps the logging methods of the console object to provide basic LOG_LEVEL functionality.
 
-`import '@mabulu/logging'`
+`import '@mabulu-inc/logging'`
 
 This is a private npm package for use by Mabulu code.
 

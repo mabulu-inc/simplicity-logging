@@ -1,25 +1,59 @@
 {
-  "type": "module",
   "name": "@smplcty/logging",
-  "version": "1.2.3",
-  "description": "",
-  "main": "index.mjs",
-  "scripts": {
-    "lint": "eslint .",
-    "test": "node --test",
-    "release:patch": "pnpm version patch && git push && git push --tags && gh release create v$(node -p \"require('./package.json').version\") --generate-notes",
-    "release:minor": "pnpm version minor && git push && git push --tags && gh release create v$(node -p \"require('./package.json').version\") --generate-notes",
-    "release:major": "pnpm version major && git push && git push --tags && gh release create v$(node -p \"require('./package.json').version\") --generate-notes"
+  "version": "1.3.0",
+  "description": "Side-effect import that filters Node's built-in console methods by LOG_LEVEL. TypeScript port of v1.2.x — same runtime behavior, now with type declarations and a build pipeline.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   },
-  "author": "",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mabulu-inc/simplicity-logging.git"
+    "url": "git+https://github.com/mabulu-inc/simplicity-logging.git"
   },
-  "license": "MIT",
+  "homepage": "https://github.com/mabulu-inc/simplicity-logging#readme",
+  "bugs": {
+    "url": "https://github.com/mabulu-inc/simplicity-logging/issues"
+  },
+  "keywords": [
+    "logging",
+    "log-level",
+    "console"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
+    "pretest": "pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.1.0",
-    "globals": "^17.4.0"
+    "@types/node": "^25.5.2",
+    "eslint": "^10.2.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.1",
+    "vitest": "^4.1.4"
   }
 }

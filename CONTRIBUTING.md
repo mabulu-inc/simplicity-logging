@@ -28,7 +28,7 @@ pnpm install
 
 ```sh
 pnpm test    # runs node --test against test/log-level.mjs
-pnpm lint    # eslint
+pnpm lint    # oxlint
 ```
 
 Both must pass before submitting a PR.
